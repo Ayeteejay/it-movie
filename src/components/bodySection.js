@@ -9,7 +9,7 @@ import Poster from "../images/carnival.jpg";
 import HiddenPennywise from "../images/hidden-pennywise.jpg";
 
 const BodyWrapper = styled.div`
-  padding: 15em 5em 10em 5em;
+  padding: 12em 5em 10em 5em;
 `;
 const SectionRow = styled(Row)`
   padding: 7em 0em 1em 0em;
@@ -53,21 +53,23 @@ export default () => {
           </p>
 
           <p>
-            In the summer of 1989, a group of bullied kids band together to
-            destroy a shape-shifting monster, which disguises itself as a clown
-            and preys on the children of Derry, their small Maine town.
+            Assumenda totam possimus quod provident similique voluptatibus
+            architecto eum. Velit quisquam modi sint laboriosam necessitatibus
+            sunt eius nulla aliquid, assumenda eaque sapiente.
           </p>
         </Col>
         <Col lg={6}>
           <p>
-            In the summer of 1989, a group of bullied kids band together to
-            destroy a shape-shifting monster, which disguises itself as a clown
-            and preys on the children of Derry, their small Maine town.
+            Assumenda totam possimus quod provident similique voluptatibus
+            architecto eum. Velit quisquam modi sint laboriosam necessitatibus
+            sunt eius nulla aliquid, assumenda eaque sapiente. Inventore
+            nesciunt sapiente commodi accusamus facere doloremque ea magni
+            numquam esse, fuga eaque provident assumenda!
           </p>
           <p>
-            In the summer of 1989, a group of bullied kids band together to
-            destroy a shape-shifting monster, which disguises itself as a clown
-            and preys on the children of Derry, their small Maine town.
+            Assumenda totam possimus quod provident similique voluptatibus
+            architecto eum. Velit quisquam modi sint laboriosam necessitatibus
+            sunt eius nulla aliquid, assumenda eaque sapiente.
           </p>
         </Col>
       </Row>
@@ -82,8 +84,9 @@ export default () => {
         <Col lg={6}>
           <motion.div
             animate={{ rotate: 7 }}
-            whileHover={{ rotate: 0, scale: 1.5 }}
             transition={{ ease: "easeInOut", duration: 1 }}
+            whileHover={{ rotate: 0, scale: 1.5 }}
+            whileTap={{ rotate: 0, scale: 1.5 }}
           >
             <Image src={Postcard} fluid />
           </motion.div>
@@ -94,6 +97,7 @@ export default () => {
           <motion.div
             animate={{ rotate: -5, scale: 0.7 }}
             whileHover={{ rotate: 0, scale: 1 }}
+            whileTap={{ rotate: 0, scale: 1 }}
             transition={{ ease: "easeInOut", duration: 1 }}
           >
             <Image src={Richy} fluid />
@@ -121,6 +125,7 @@ export default () => {
             }}
             animate={{}}
             whileHover={{ y: 150, opacity: 0 }}
+            whileTap={{ y: 150, opacity: 0 }}
             transition={{ ease: "easeInOut", duration: 0.4 }}
           >
             <Image src={Poster} fluid />
@@ -134,11 +139,10 @@ export default () => {
       {/* Stuff here */}
       <EndingRow>
         <Col lg={12}>
+          <h4>Lorem ipsum dolor</h4>
           <h3>
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quia
-            odit necessitatibus voluptatum recusandae asperiores, inventore
-            nesciunt sapiente commodi accusamus facere doloremque ea magni
-            numquam esse."
+            odit necessitatibus voluptatum recusandae asperiores."
           </h3>
         </Col>
       </EndingRow>

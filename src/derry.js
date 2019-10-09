@@ -8,9 +8,11 @@ import Intro from "./components/introSection";
 import Haunted from "./images/haunted-house.jpg";
 import Body from "./components/bodySection";
 import End from "./components/endSection";
+import Fade from "react-reveal";
 
 const TitleWrapper = styled(Image)`
-  padding: 7em;
+  padding: 5em;
+  max-width: 300px;
 `;
 const Line = styled.span`
   background-color: #db0000;
@@ -21,7 +23,7 @@ const Line = styled.span`
   right: 0;
   width: 100%;
   z-index: 2;
-  bottom: -150px;
+  bottom: -200px;
   height: 200px;
 `;
 
@@ -32,46 +34,63 @@ const HauntedHouseWrapper = styled(Row)`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  @media only screen and (max-width: 1500px) {
+    height: 400px;
+  }
+`;
+const ItWrapper = styled.div`
+  text-align: center;
 `;
 
 class Derry extends React.Component {
   render() {
     return (
       <Container fluid>
-        <Row>
-          <Col md={{ span: 4, offset: 4 }}>
-            <motion.div
-              animate={{}}
-              transition={{ ease: "easeInOut", duration: 1 }}
-              whileHover={{ scale: 1.4, y: 30 }}
-            >
-              <TitleWrapper src={Title} fluid />
-            </motion.div>
-            <Line></Line>
-          </Col>
-        </Row>
-        <Row>
-          <Container>
-            <Intro></Intro>
-          </Container>
-        </Row>
-        <HauntedHouseWrapper></HauntedHouseWrapper>
-        {/* <Row>
-          <Col lg={{ span: 10, offset: 1 }}>
-            <Image src={Haunted} fluid />
-          </Col>
-        </Row> */}
-        <Row>
-          <Container>
-            <Body></Body>
-          </Container>
-        </Row>
-
-        <Row>
-          <Container fluid>
-            <End></End>
-          </Container>
-        </Row>
+        <Fade>
+          <Row>
+            <Col md={{ span: 4, offset: 4 }}>
+              <ItWrapper>
+                <motion.div
+                  animate={{
+                    scale: [1, 1.1, 1],
+                    opacity: [0.1, 1, 0.1]
+                  }}
+                  transition={{
+                    ease: "easeInOut",
+                    duration: 3,
+                    loop: Infinity,
+                    yoyo: Infinity
+                  }}
+                >
+                  <TitleWrapper src={Title} fluid />
+                </motion.div>
+              </ItWrapper>
+              <Line></Line>
+            </Col>
+          </Row>
+        </Fade>
+        <Fade>
+          <Row>
+            <Container>
+              <Intro></Intro>
+            </Container>
+          </Row>
+          <HauntedHouseWrapper></HauntedHouseWrapper>
+        </Fade>
+        <Fade>
+          <Row>
+            <Container>
+              <Body></Body>
+            </Container>
+          </Row>
+        </Fade>
+        <Fade>
+          <Row>
+            <Container fluid>
+              <End></End>
+            </Container>
+          </Row>
+        </Fade>
       </Container>
     );
   }

@@ -6,7 +6,7 @@ import Pennywise from "../images/pennywise-intro.jpg";
 import { motion } from "framer-motion";
 
 const IntroWrapper = styled(Row)`
-  padding: 20em 5em;
+  padding: 20em 5em 8em 5em;
 `;
 const Line = styled.span`
   background-color: #db0000;
@@ -16,9 +16,9 @@ const Line = styled.span`
   position: absolute;
   right: 0;
   width: 100%;
-  z-index: 2;
-  bottom: -500px;
-  height: 250px;
+  z-index: 0;
+  bottom: -150px;
+  height: 150px;
 `;
 
 export default () => {
@@ -26,8 +26,8 @@ export default () => {
     <IntroWrapper>
       <Col lg={6} style={{ zIndex: 1 }}>
         <h1>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, nonumy eirmod
-          tempor dolor sit amet.
+          Welcome to Derry, Maine. It’s a small city, a place as hauntingly
+          familiar as your own hometown. Only in Derry the haunting is real.
         </h1>
         <p>
           In the summer of 1989, a group of bullied kids band together to
@@ -40,11 +40,11 @@ export default () => {
           style={{ zIndex: 0 }}
           transition={{ ease: "easeInOut", duration: 1 }}
           whileHover={{ scale: 1.3, y: 30 }}
+          whileTap={{ scale: 1.3, y: 30 }}
         >
           <Image src={Pennywise} fluid />
         </motion.div>
       </Col>
-      <Line></Line>
     </IntroWrapper>
   );
 };
