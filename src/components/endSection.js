@@ -11,6 +11,7 @@ import Pennywise from "../images/pennywise-with-balloon.jpg";
 import Balloon from "../images/red-balloon.png";
 import It from "../images/it.svg";
 import { motion } from "framer-motion";
+import Wave from "react-wavify";
 
 const EndWrapper = styled(Row)`
   padding: 10em 5em;
@@ -22,6 +23,9 @@ const EndWrapper = styled(Row)`
   h4 {
     color: black;
   }
+  @media only screen and (max-width: 1500px) {
+    padding: 5em 2em 3em 2em;
+  }
 `;
 
 const PennywiseWrapper = styled(Row)`
@@ -32,22 +36,22 @@ const PennywiseWrapper = styled(Row)`
   background-repeat: no-repeat;
   background-size: cover;
   @media only screen and (max-width: 1500px) {
-    height: 400px;
+    height: 500px;
   }
 `;
 const BillContainer = styled.div`
   position: absolute;
   width: 500px;
   right: 0px;
-  top: 30px;
+  top: 10px;
   z-index: 10;
 `;
 const BevContainer = styled.div`
   width: 400px;
   position: absolute;
   width: 350px;
-  top: 50px;
-  left: -100px;
+  top: 190px;
+  left: 0px;
   z-index: 10;
 `;
 
@@ -55,15 +59,15 @@ const LosersContainer = styled.div`
   width: 800px;
   position: absolute;
   right: 450px;
-  top: 150px;
+  top: 110px;
   z-index: 9;
 `;
 
 const CaveWrapper = styled.div`
   position: absolute;
   width: 550px;
-  top: 500px;
-  right: 30px;
+  top: 470px;
+  right: 100px;
   z-index: 3;
 `;
 
@@ -71,7 +75,7 @@ const RoomWrapper = styled.div`
   position: absolute;
   width: 500px;
   top: 400px;
-  left: 50px;
+  left: 100px;
   z-index: 0;
 `;
 
@@ -117,7 +121,7 @@ export default () => {
         <Container fluid>
           <Row>
             <Col lg={{ span: 8, offset: 2 }}>
-              <h4>Lorem ipsum dolar</h4>
+              <h4>We all float</h4>
               <h3>
                 "Where you going, Eds? If you lived here you'd be home by now!
                 Come join the clown, Eds. You'll float down here. We all float
@@ -125,32 +129,45 @@ export default () => {
               </h3>
             </Col>
           </Row>
-          <ImageWrapper>
-            {/* <motion.div
+        </Container>
+      </EndWrapper>
+      <Row>
+        <Wave
+          style={{ backgroundColor: "#8d0000", padding: "0" }}
+          fill="#000"
+          paused={false}
+          options={{
+            height: 25,
+            amplitude: 10,
+            speed: 0.4,
+            points: 6
+          }}
+        />
+      </Row>
+
+      <ImageWrapper>
+        {/* <motion.div
               transition={{ ease: "easeInOut", duration: 1 }}
               whileHover={{ scale: 1.4, y: 30 }}
               style={{ zIndex: 99 }}
             > */}
-            <BevContainer>
-              <Image src={Bev} fluid />
-            </BevContainer>
-            {/* </motion.div> */}
-            <LosersContainer>
-              <Image src={Losers} fluid />
-            </LosersContainer>
-            <CaveWrapper>
-              <Image src={Cave} fluid />
-            </CaveWrapper>
-            <RoomWrapper>
-              <Image src={Room} fluid />
-            </RoomWrapper>
-            <BillContainer>
-              <Image src={Bill} fluid />
-            </BillContainer>
-          </ImageWrapper>
-        </Container>
-      </EndWrapper>
-
+        <BevContainer>
+          <Image src={Bev} fluid />
+        </BevContainer>
+        {/* </motion.div> */}
+        <LosersContainer>
+          <Image src={Losers} fluid />
+        </LosersContainer>
+        <CaveWrapper>
+          <Image src={Cave} fluid />
+        </CaveWrapper>
+        <RoomWrapper>
+          <Image src={Room} fluid />
+        </RoomWrapper>
+        <BillContainer>
+          <Image src={Bill} fluid />
+        </BillContainer>
+      </ImageWrapper>
       <BalloonWrapper>
         <Col lg={{ span: 2, offset: 5 }}>
           <ItWrapper>

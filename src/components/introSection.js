@@ -7,6 +7,9 @@ import { motion } from "framer-motion";
 
 const IntroWrapper = styled(Row)`
   padding: 20em 5em 8em 5em;
+  @media only screen and (max-width: 1500px) {
+    padding: 20em 2em 5em 2em;
+  }
 `;
 const Line = styled.span`
   background-color: #db0000;
