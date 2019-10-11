@@ -69,28 +69,24 @@ class Derry extends React.Component {
             </Col>
           </Row>
         </Fade>
-        <Fade>
-          <Row>
-            <Container>
-              <Intro></Intro>
-            </Container>
-          </Row>
-          <HauntedHouseWrapper></HauntedHouseWrapper>
-        </Fade>
-        <Fade>
-          <Row>
-            <Container>
-              <Body></Body>
-            </Container>
-          </Row>
-        </Fade>
-        <Fade>
-          <Row>
-            <Container fluid>
-              <End></End>
-            </Container>
-          </Row>
-        </Fade>
+        <Row>
+          <Container>
+            <Intro></Intro>
+          </Container>
+        </Row>
+        <HauntedHouseWrapper></HauntedHouseWrapper>
+
+        <Row>
+          <Container>
+            <Body></Body>
+          </Container>
+        </Row>
+
+        <Row>
+          <Container fluid>
+            <End></End>
+          </Container>
+        </Row>
       </Container>
     );
   }

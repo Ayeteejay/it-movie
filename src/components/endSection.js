@@ -12,6 +12,7 @@ import Balloon from "../images/red-balloon.png";
 import It from "../images/it.svg";
 import { motion } from "framer-motion";
 import Wave from "react-wavify";
+import Fade from "react-reveal";
 
 const EndWrapper = styled(Row)`
   padding: 10em 5em;
@@ -116,101 +117,110 @@ const BalloonWrapper = styled(Row)`
 export default () => {
   return (
     <React.Fragment>
-      <PennywiseWrapper></PennywiseWrapper>
-      <EndWrapper>
-        <Container fluid>
-          <Row>
-            <Col lg={{ span: 8, offset: 2 }}>
-              <h4>We all float</h4>
-              <h3>
-                "Where you going, Eds? If you lived here you'd be home by now!
-                Come join the clown, Eds. You'll float down here. We all float
-                down here. Yes, we do!"
-              </h3>
-            </Col>
-          </Row>
-        </Container>
-      </EndWrapper>
-      <Row>
-        <Wave
-          style={{ backgroundColor: "#8d0000", padding: "0" }}
-          fill="#000"
-          paused={false}
-          options={{
-            height: 25,
-            amplitude: 10,
-            speed: 0.4,
-            points: 6
-          }}
-        />
-      </Row>
+      <Fade>
+        <PennywiseWrapper></PennywiseWrapper>
+      </Fade>
+      <Fade>
+        <EndWrapper>
+          <Container fluid>
+            <Row>
+              <Col lg={{ span: 8, offset: 2 }}>
+                <h4>We all float</h4>
+                <h3>
+                  "Where you going, Eds? If you lived here you'd be home by now!
+                  Come join the clown, Eds. You'll float down here. We all float
+                  down here. Yes, we do!"
+                </h3>
+              </Col>
+            </Row>
+          </Container>
+        </EndWrapper>
 
-      <ImageWrapper>
-        {/* <motion.div
+        <Row>
+          <Wave
+            style={{ backgroundColor: "#8d0000" }}
+            fill="#000"
+            paused={false}
+            options={{
+              height: 25,
+              amplitude: 10,
+              speed: 0.4,
+              points: 6
+            }}
+          />
+        </Row>
+      </Fade>
+      <Fade>
+        <ImageWrapper>
+          {/* <motion.div
               transition={{ ease: "easeInOut", duration: 1 }}
               whileHover={{ scale: 1.4, y: 30 }}
               style={{ zIndex: 99 }}
             > */}
-        <BevContainer>
-          <Image src={Bev} fluid />
-        </BevContainer>
-        {/* </motion.div> */}
-        <LosersContainer>
-          <Image src={Losers} fluid />
-        </LosersContainer>
-        <CaveWrapper>
-          <Image src={Cave} fluid />
-        </CaveWrapper>
-        <RoomWrapper>
-          <Image src={Room} fluid />
-        </RoomWrapper>
-        <BillContainer>
-          <Image src={Bill} fluid />
-        </BillContainer>
-      </ImageWrapper>
-      <BalloonWrapper>
-        <Col lg={{ span: 2, offset: 5 }}>
-          <ItWrapper>
-            <motion.div
-              animate={{
-                y: [0, 60, 0, 60, 0],
-                x: [0, 15, 0, -20, 0, 15, 0],
-                rotate: [0, 5, 0, -3, 0, 5, 0, 3, 0]
-              }}
-              transition={{
-                loop: Infinity,
-                yoyo: Infinity,
-                ease: "easeInOut",
-                duration: 10
-              }}
-            >
-              <Image src={Balloon} fluid style={{ maxWidth: "90px" }} />
-            </motion.div>
-          </ItWrapper>
-        </Col>
-      </BalloonWrapper>
-
-      <FooterWrapper>
-        <Container>
-          <Row>
-            <Col sm={2}>
-              <ItWrapper>
-                <Image src={It} fluid style={{ maxWidth: "80px" }} />
-              </ItWrapper>
-            </Col>
-            <Col sm={{ span: 4, offset: 6 }}>
-              <CopyrightWrapper>
-                <h5>You'll float too.</h5>
-                <p>
-                  Powered by Stephen King
-                  <br />
-                  Copyright &#x24B8; 2019 Adam Jones
-                </p>
-              </CopyrightWrapper>
-            </Col>
-          </Row>
-        </Container>
-      </FooterWrapper>
+          <BevContainer>
+            <Image src={Bev} fluid />
+          </BevContainer>
+          {/* </motion.div> */}
+          <LosersContainer>
+            <Image src={Losers} fluid />
+          </LosersContainer>
+          <CaveWrapper>
+            <Image src={Cave} fluid />
+          </CaveWrapper>
+          <RoomWrapper>
+            <Image src={Room} fluid />
+          </RoomWrapper>
+          <BillContainer>
+            <Image src={Bill} fluid />
+          </BillContainer>
+        </ImageWrapper>
+      </Fade>
+      <Fade>
+        <BalloonWrapper>
+          <Col lg={{ span: 2, offset: 5 }}>
+            <ItWrapper>
+              <motion.div
+                animate={{
+                  y: [0, 60, 0, 60, 0],
+                  x: [0, 15, 0, -20, 0, 15, 0],
+                  rotate: [0, 5, 0, -3, 0, 5, 0, 3, 0]
+                }}
+                transition={{
+                  loop: Infinity,
+                  yoyo: Infinity,
+                  ease: "easeInOut",
+                  duration: 10
+                }}
+              >
+                <Image src={Balloon} fluid style={{ maxWidth: "90px" }} />
+              </motion.div>
+            </ItWrapper>
+          </Col>
+        </BalloonWrapper>
+      </Fade>
+      <Fade>
+        <FooterWrapper>
+          <Container>
+            <Row>
+              <Col sm={2}>
+                <ItWrapper>
+                  <Image src={It} fluid style={{ maxWidth: "80px" }} />
+                </ItWrapper>
+              </Col>
+              <Col sm={{ span: 4, offset: 6 }}>
+                <CopyrightWrapper>
+                  <h5>You'll float too.</h5>
+                  <p>
+                    Powered by Stephen King
+                    <br />
+                    Copyright &#x24B8; 2019 Adam Jones
+                  </p>
+                </CopyrightWrapper>
+              </Col>
+            </Row>
+          </Container>
+        </FooterWrapper>
+      </Fade>
     </React.Fragment>
   );
 };
